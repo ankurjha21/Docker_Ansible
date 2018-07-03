@@ -1,0 +1,33 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+
+- name: update apt packages
+  apt: update_cache=yes cache_valid_time=3600
+
+- name: install supporting packages to manage apt repositories
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - software-properties-common
+    - python-software-properties
+    - python
+    - g++
+    - make
+
+
+- name: installing tools and utility packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - wget
+    - curl
+    - htop
+    - cron
+    - unzip
+    - git
+    - python-pip
+
+
+- name: install python libraries
+  pip: name={{ item }}
+  with_items:
+    - passlib
+    - yolk

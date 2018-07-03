@@ -1,0 +1,11 @@
+---
+# Web-serving VMs deployment playbook.
+
+- name: configure HTTP server nodes
+  hosts: webservers
+  sudo: yes
+  roles:
+    - common
+    - php5-fpm
+    - php-tools
+    - nginx
