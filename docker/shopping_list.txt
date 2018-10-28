@@ -1,0 +1,6 @@
+Wellcome to Menu-based terminal app to CRUD a shopping list
+
+milk, 1 gallon
+yogurt, 6
+broccoli, 2
+peaches, 6
